@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F23BAF0424B7C4DD005C72EF /* AlertMsgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23BAF0324B7C4DD005C72EF /* AlertMsgs.swift */; };
 		F28A0B5124B65A1F0083CE3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28A0B5024B65A1F0083CE3F /* AppDelegate.swift */; };
 		F28A0B5324B65A1F0083CE3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28A0B5224B65A1F0083CE3F /* SceneDelegate.swift */; };
 		F28A0B5524B65A1F0083CE3F /* RecordSoundsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28A0B5424B65A1F0083CE3F /* RecordSoundsVC.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F23BAF0324B7C4DD005C72EF /* AlertMsgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMsgs.swift; sourceTree = "<group>"; };
 		F28A0B4D24B65A1F0083CE3F /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28A0B5024B65A1F0083CE3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F28A0B5224B65A1F0083CE3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F23BAF0524B7C6A9005C72EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F28A0B5624B65A1F0083CE3F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F23BAF0624B7C6BF005C72EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F23BAF0324B7C4DD005C72EF /* AlertMsgs.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F28A0B4424B65A1E0083CE3F = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +80,9 @@
 			children = (
 				F28A0B5024B65A1F0083CE3F /* AppDelegate.swift */,
 				F28A0B5224B65A1F0083CE3F /* SceneDelegate.swift */,
-				F28A0B6824B78D6C0083CE3F /* ViewControllers */,
-				F28A0B5624B65A1F0083CE3F /* Main.storyboard */,
+				F23BAF0624B7C6BF005C72EF /* Model */,
+				F23BAF0524B7C6A9005C72EF /* View */,
+				F28A0B6824B78D6C0083CE3F /* Controller */,
 				F28A0B5924B65A270083CE3F /* Assets.xcassets */,
 				F28A0B5B24B65A270083CE3F /* LaunchScreen.storyboard */,
 				F28A0B5E24B65A270083CE3F /* Info.plist */,
@@ -71,14 +90,14 @@
 			path = PitchPerfect;
 			sourceTree = "<group>";
 		};
-		F28A0B6824B78D6C0083CE3F /* ViewControllers */ = {
+		F28A0B6824B78D6C0083CE3F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				F28A0B5424B65A1F0083CE3F /* RecordSoundsVC.swift */,
 				F28A0B6424B770C30083CE3F /* PlaySoundsVC.swift */,
 				F28A0B6624B77ACE0083CE3F /* PlaySoundsVC+Audio.swift */,
 			);
-			path = ViewControllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +175,7 @@
 				F28A0B6524B770C30083CE3F /* PlaySoundsVC.swift in Sources */,
 				F28A0B5524B65A1F0083CE3F /* RecordSoundsVC.swift in Sources */,
 				F28A0B5124B65A1F0083CE3F /* AppDelegate.swift in Sources */,
+				F23BAF0424B7C4DD005C72EF /* AlertMsgs.swift in Sources */,
 				F28A0B5324B65A1F0083CE3F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

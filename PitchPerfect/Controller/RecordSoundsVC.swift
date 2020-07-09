@@ -22,11 +22,7 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder: AVAudioRecorder!
     
     // MARK: Override Methods
-    // View loaded
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+
     // View will Appear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,10 +42,10 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
     }
 
     // MARK: Methods
+    
+    // Start Recording
     @IBAction func recordAudio(_ sender: UIButton) {
-        recordingLbl.text = "Recording in progress..."
-        stopRecordingBtn.isEnabled = true
-        recordBtn.isEnabled = false
+        configureRecordUI(isRecording: true)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -67,9 +63,7 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
     }
     // Stop Recording
     @IBAction func stopRecording(_ sender: UIButton) {
-        recordingLbl.text = "Tap to Record"
-        stopRecordingBtn.isEnabled = false
-        recordBtn.isEnabled = true
+        configureRecordUI(isRecording: false)
         
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
@@ -80,8 +74,20 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
         if flag {
             performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
         } else {
-            print("Error: Unsuccessful Recording")
+            showAlert(AlertMsgs.RecordingFailedTitle, message: AlertMsgs.RecordingFailedMessage)
         }
+    }
+    // Config Record UI
+    func configureRecordUI(isRecording: Bool) {
+        stopRecordingBtn.isEnabled = isRecording // to enable or disable button
+        recordBtn.isEnabled = !isRecording // opposite of state of stop btn
+        recordingLbl.text = isRecording ? "Recording in Progress" : "Tap to Record"
+    }
+    // Show Alert to User
+    func showAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: AlertMsgs.DismissAlert, style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
