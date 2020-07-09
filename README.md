@@ -6,6 +6,8 @@
 
 This is simple voice-changing app that records a user's audio using the microphone and plays the user's voice back. The user 6 options to choose from.
 
+![](screenShot.png)
+
 ## Requirements 
 - iOS 13.5+
 - Xcode 9.3+
